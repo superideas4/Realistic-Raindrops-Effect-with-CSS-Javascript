@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Realistic Raindrops Effect With Javascript Canvas</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<section>
+	<img alt="background" id="background" src="" />
+</section>
+<script src="rainyday.js"></script>
+<script>
+  function rain() {
+    var image = document.getElementById('background');
+
+    image.onload = function() {
+      var engine = new RainyDay({
+        image: this,
+        blur: 10,
+        fps: 40
+      });
+
+      engine.rain([
+        [5, 2, 2]
+      ], 0);
+    };
+
+	image.crossOrigin = 'anonymous';
+    image.src = 'http://i.imgur.com/N7ETzFO.jpg';
+  }
+
+  rain();
+</script>
+</body>
+</html>
